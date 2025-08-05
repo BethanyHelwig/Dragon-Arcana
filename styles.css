@@ -1,0 +1,66 @@
+/* COLOR PALETTE
+Background: #211E23
+Blue: #80c5ff
+Purple: #aa00ff
+Pink: #eda2c0
+*/
+
+/* -- GENERAL -- */
+body {
+    margin: 0;
+    background-color: #211E23;
+    color: whitesmoke;
+    font-family: "Amarante", serif;
+}
+
+header {
+    margin: 75px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-hero {
+    width: 200px;
+    margin-right: 20px;
+    padding: 0;
+}
+
+/* -- TYPOGRAPHY -- */
+
+#hero-title {
+    background-image: linear-gradient(white 10%, #80c5ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5em;
+    filter: drop-shadow(0 0 5px #aa00ff);
+    margin: 0;
+    padding: 0;
+    line-height: 80%;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* -- LAYOUT -- */
+#hero-text-container {
+    width: 300px;
+}
+
+button {
+    font-family: inherit;
+    font-size: 16px;
+    color: white;
+    background-color: #7700b3;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+button:hover,
+button:active {
+    background-color: #ebd7f5;
+    color: #7700b3;
+    box-shadow: 0 0 20px #aa00ff;
+}
