@@ -13,8 +13,31 @@
             <div id="hero-text-container">
                 <h1 id="hero-title">Dragon Arcana</h1>
                 <p>Are you ready to play?</p>
-                <button id="hero-btn">ENTER</button>
+                <button id="enter-btn">Enter</button>
             </div>
         </header>
+        <section id="login-container">
+            <h2>Already have an account? Login, hero!</h2>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    required
+                    id="email"
+                    placeholder="adventurer@home.com"
+                    name="login">
+                <label for="password">Password:</label>
+                <input 
+                    type="password" 
+                    required
+                    id="password" 
+                    placeholder="M@gic1zcool"
+                    name="login">
+                <button type="submit">Log in</button>
+            </form>
+            <h2>New here? Welcome, adventurer!</h2>
+            <button>Create Account</button>
+        </section>
     </body>
+    <script src="index.js"></script>
 </html>
