@@ -10,5 +10,5 @@ export const userSavedData = {
             class: 'Sorcerer'
         }
     ],
-    games: []
+    // games: []
 }

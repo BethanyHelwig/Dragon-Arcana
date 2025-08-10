@@ -12,7 +12,7 @@ document.addEventListener('click', function(e){
 function renderDefaultState(userData) {
 
     let contentHtml = `
-        <h1>Welcome, adventurer!</h1>
+        <h1>Welcome, ${userData.username}!</h1>
 
         <div class="flex">
             <!-- CHARACTERS -->
@@ -43,16 +43,43 @@ function renderDefaultState(userData) {
             <!-- GAMES -->
             <section class="main-content-section gradient-border" aria-label="Games">
                 <h2>Games</h2>
+        `
+
+    if (userData.games){
+        userData.games.forEach(function(game){
+            contentHtml += `
+                <div class="game">
+                    <h3>${game.title}</h3>
+                    <p>Date Created: ${game.dateCreated}</p>
+                </div>
+            `
+        })
+    }
+    else {
+        contentHtml += `
+            <p>You have no saved games.</p>
+        `
+    }
+
+    contentHtml +=
+        `
             </section>
 
             <!-- WORLD OF D&D -->
             <section class="main-content-section gradient-border" aria-label="World of D&D">
                 <h2>World of D&D</h2>
+                <form>
+                    <label for="dnd-search">Search D&D Database:</label>
+                    <input type="search" id="dnd-search" placeholder="What are you looking for?">
+                    <button type="submit">Go!</button>
+                </form>
             </section>
         </div>
         `
 
     mainContent.innerHTML = contentHtml
+
+    console.log(contentHtml)
 
 }
 
