@@ -3,13 +3,14 @@ Background: #211E23
 Blue: #80c5ff
 Purple: #aa00ff
 Pink: #eda2c0
+Green: 8ac781
 */
 
 /* -- GENERAL -- */
 body {
     margin: 0;
     background-color: #211E23;
-    color: whitesmoke;
+    color: #e6e6e6;
     font-family: "Amarante", serif;
     align-items: center;
 }
@@ -194,7 +195,7 @@ footer {
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid goldenrod;
+    border: 1px solid #8ac781;
     border-radius: 5px;
 }
 
@@ -231,6 +232,7 @@ button {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    margin-bottom: 10px;
 }
 
 button:hover,

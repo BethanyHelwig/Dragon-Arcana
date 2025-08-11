@@ -63,6 +63,10 @@ function renderDefaultState(userData) {
 
     contentHtml +=
         `
+                <div>
+                    <button>Join Game <i class="fa-solid fa-dice-d20"></i></button>
+                    <button>Create Game <i class="fa-solid fa-plus"></i></button>
+                </div>
             </section>
 
             <!-- WORLD OF D&D -->
