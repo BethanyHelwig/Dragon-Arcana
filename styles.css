@@ -90,6 +90,7 @@ a {
 a:hover,
 a:active {
     color: #efadff;
+    /* color: #8ac781; */
 }
 
 /* -- LAYOUT -- */
@@ -174,7 +175,7 @@ footer {
 .gradient-border {
     padding: 15px 25px;
     background: linear-gradient(#211E23, #211E23) padding-box,
-                linear-gradient(#80c5ff, #aa00ff) border-box;
+                linear-gradient(#80c5ff, #6f378b) border-box;
     border-radius: 15px;
     border: 4px solid transparent;
 }
@@ -227,8 +228,8 @@ button {
     font-family: inherit;
     font-size: 16px;
     font-weight: bold;
-    color: white;
-    background-color: #7700b3;
+    color: whitesmoke;
+    background-color: #6f378b;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;

@@ -2,12 +2,15 @@ import { userSavedData } from "./dummy_data.js"
 
 const mainContent = document.getElementById('main-content')
 const charactersBtn = document.getElementById('characters-btn')
+const copyrightText = document.getElementById('copyright-text')
 
 document.addEventListener('click', function(e){
     if(e.target.id === 'characters-btn'){
         console.log("Characters button clicked!")
     }
 })
+
+copyrightText.innerText = `Copyright © ${new Date().getFullYear()} Phantom Fox`
 
 function renderDefaultState(userData) {
 
