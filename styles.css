@@ -45,7 +45,7 @@ body {
 }
 
 #nav-title {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-left: 15px;
 }
 
@@ -98,13 +98,15 @@ a:active {
 header {
     margin: 75px 50px 40px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 nav {
     background-color: #211E23;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
     box-sizing: border-box;
     align-items: center;
     width: 100%;
@@ -132,10 +134,11 @@ footer {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 450px;
+    /* min-width: 90%; */
+    box-sizing: border-box;
     height: auto;
-    margin: 0 auto;
-    padding: 15px 25px;
+    margin: 0 0.625em; /* 10px */
+    padding: 0.9375em; /* 15px */
     background: linear-gradient(#211E23, #211E23) padding-box,
                 linear-gradient(#aa00ff, #80c5ff) border-box;
     border-radius: 15px;
@@ -146,9 +149,10 @@ footer {
     margin-top: 5em; /* 80px */
     margin-bottom: 1.25em; /* 20px */
     padding: 1.25em; /* 20px */
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
+    text-align: center;
+    gap: 1em;
 }
 
 #content-nav {
@@ -159,17 +163,15 @@ footer {
     padding: 0;
 }
 
-/* #content-nav li {
-    padding: 20px;
-    font-size: large;
-    border: 2px solid #aa00ff;
-} */
-
 #nav-links {
-    margin: auto 1.25em auto auto; /* 20px */
-    display: flex;
+    margin: auto auto 1em auto; /* 20px */
+    display: none; /* change to flex */
+    flex-direction: column;
+    text-align: center;
     list-style: none;
     gap: 1.875em; /* 30px */
+    grid-column: span 3;
+    padding: 0;
 }
 
 .gradient-border {
@@ -181,7 +183,7 @@ footer {
 }
 
 .main-content-section {
-    width: 30%;
+    max-width: 100%;
     min-height: 200px;
     border-radius: 10px;
     padding: 0.625em; /* 10px */
@@ -224,6 +226,10 @@ input[type="search"] {
     color: whitesmoke;
 }
 
+input:focus {
+    outline: none;
+}
+
 button {
     font-family: inherit;
     font-size: 1rem;
@@ -243,9 +249,74 @@ button:active {
     box-shadow: 0 0 20px #aa00ff;
 }
 
+.hamburger {
+    display: block;
+    font-size: 2rem;
+    background-color: #211E23;
+    padding: 0.2em 0.2em;
+    margin: auto;
+}
+
+.hamburger:hover {
+    background-color: #353535;
+    color: whitesmoke;
+    box-shadow: none;
+}
+
 /* -- UTILITY -- */
 
 .flex {
     display: flex;
     justify-content: space-around;
+}
+
+/* -- MEDIA QUERIES -- */
+
+@media (min-width: 550px){
+
+    nav {
+        background-color: #211E23;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        padding: 0.3125em 0.9375em; /* 5px 15px */
+        top: 0;
+        left: 0;
+        box-shadow: 0 5px 5px black;
+    }
+
+    #nav-links {
+        margin: auto 1.25em auto auto; /* 20px */
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 1.875em; /* 30px */
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    #main-content {
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: repeat(2, 1fr); */
+    }
+
+    #user-welcome {
+        grid-column: span 3;
+    }
+
+    header {
+        flex-direction: row;
+    }
+
+    #login-container {
+        width: 450px;
+        min-width: 450px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
 }

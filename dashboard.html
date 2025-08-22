@@ -11,12 +11,15 @@
 
         <!-- Scripts -->
         <script src="dashboard.js" type="module"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     
     <body>
         <nav>
             <img id="nav-logo" src="images/logo_dark_mode.png">
             <h2 id="nav-title">Dragon Arcana</h2>
+            <button class="hamburger" data-btn="hamburger">&#9776;</button>
             <ul id="nav-links">
                 <li><a href="#" id="characters-btn">Characters <i class="fa-solid fa-user"></i></a></li>
                 <li><a href="#">Games <i class="fa-solid fa-dice-d20"></i></a></li>
@@ -27,6 +30,41 @@
         </nav>
 
         <main id="main-content">
+
+            <h2 id="user-welcome">Welcome, adventurer!</h2>
+
+            <!-- CHARACTERS -->
+            <section 
+                id="characters-container"
+                class="main-content-section gradient-border" 
+                aria-label="Characters"
+            >
+                <h2>Characters</h2>
+            </section>
+
+            <!-- GAMES -->
+            <section 
+                id="games-container"
+                class="main-content-section gradient-border" 
+                aria-label="Games"
+            >
+                <h2>Games</h2>
+                <div>
+                    <button>Join Game <i class="fa-solid fa-dice-d20"></i></button>
+                    <button>Create Game <i class="fa-solid fa-plus"></i></button>
+                </div>
+            </section>
+
+            <!-- WORLD OF D&D -->
+            <section class="main-content-section gradient-border" aria-label="World of D&D">
+                <h2>World of D&D</h2>
+                <form>
+                    <label for="dnd-search">Search D&D Database:</label>
+                    <input type="search" id="dnd-search" placeholder="What are you looking for?">
+                    <button type="submit">Go!</button>
+                </form>
+            </section>
+        
         </main>
 
         <footer>
