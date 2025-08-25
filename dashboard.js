@@ -19,6 +19,11 @@ document.addEventListener('click', function(e){
     }
 })
 
+document.addEventListener('submit', function(e){
+    e.preventDefault()
+    search()
+})
+
 // updates the copyright text to always show the current year
 copyrightText.innerText = `Copyright © ${new Date().getFullYear()} Phantom Fox`
 
@@ -86,6 +91,17 @@ function renderCharacters(userData) {
 
 function renderGreeting(userData){
     document.getElementById('user-welcome').textContent = `Welcome, ${userData.username}!`
+}
+
+function search(){
+    const searchTerm = document.getElementById('dnd-search').value
+    console.log(searchTerm)
+
+    /*
+    fetch("https://www.dnd5eapi.co/api/2014/alignments/?name=cha")
+        .then(response => response.json())
+        .then(data => console.log(data))
+    */
 }
 
 renderDefaultState(userSavedData)
