@@ -113,15 +113,6 @@ a:active {
     color: #bbe1ff;
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
-}
-
-li {
-    line-height: 1.5em;
-}
-
 /* -- LAYOUT -- */
 
 header {
@@ -269,12 +260,54 @@ footer {
     display: flex;
 }
 
+.search-result-content ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-content li {
+    line-height: 1.5em;
+}
+
+.search-result-content ul .ability-scores {
+    flex-direction: row;
+    list-style: none;
+    gap: 0.25em;
+    padding: 4px;
+}
+
+.search-result-content .ability-scores li {
+    border: 1px solid #8ac781;
+    border-radius: 4.6px;
+    background-color: #353535;
+}
+
+#search-filters {
+    display: none;
+    text-align: start;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+#search-filters h3 {
+    margin-bottom: 1em;
+}
+
 /* INTERACTIVE */
 
 form {
     display: flex;
     flex-direction: column;
     gap: 0.25em; /* 4px */
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 0.5em;
 }
 
 select,
@@ -288,6 +321,16 @@ input[type="search"] {
     border-radius: 10px;
     padding: 0.3125em 0.5em; /* 5px 8px */
     color: whitesmoke;
+}
+
+input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+select,
+input[type="search"] {
+    min-width: 200px;
+    width: 100%;
 }
 
 input:focus {

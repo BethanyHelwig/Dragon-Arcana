@@ -36,9 +36,9 @@
 
         <!-- WORLD OF D&D -->
             <h2 class="title-glow">World of D&D</h2>
-            <form>
+            <form id="search-form">
                 <label for="dnd-search">Search D&D Database:</label>
-                <input type="search" id="dnd-search" placeholder="What are you looking for?" pattern="[a-zA-Z\s]+">
+                <input type="search" id="dnd-search" placeholder="What are you looking for?" pattern="[a-zA-Z\s0-9]+">
                 <select name="search-dropdown" id="search-dropdown">
                     <option value="ability-scores">Ability Scores</option>
                     <option value="alignments">Alignments</option>
@@ -64,6 +64,13 @@
                     <option value="traits">Traits</option>
                     <option value="weapon-properties">Weapon Properties</option>
                 </select>
+                <div id="search-filters">
+                    <h3>Search by: </h3>
+                    <fieldset form="search-form">
+                        <label><input type="radio" value="name" name="filter" checked>Name</label>
+                        <label><input type="radio" value="challenge_rating" name="filter">Challenge Rating</label>
+                    </fieldset>
+                </div>
                 <button type="submit">Go!</button>
             </form>
 
