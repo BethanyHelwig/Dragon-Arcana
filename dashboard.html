@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/global.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
@@ -17,14 +17,16 @@
     
     <body>
         <nav>
-            <img id="nav-logo" src="images/logo_dark_mode.png">
-            <h2 id="nav-title">Dragon Arcana</h2>
+            <a href="dashboard.html" class="logo-link">
+                <img id="nav-logo" src="images/logo_dark_mode.png">
+                <h2 id="nav-title">Dragon Arcana</h2>
+            </a>
             <button class="hamburger" data-btn="hamburger">&#9776;</button>
             <ul id="nav-links">
                 <li><a href="#" id="characters-btn">Characters <i class="fa-solid fa-user"></i></a></li>
                 <li><a href="#">Games <i class="fa-solid fa-dice-d20"></i></a></li>
                 <li><a href="#">Friends <i class="fa-solid fa-user-group"></i></a></li>
-                <li><a href="#">World of D&D <i class="fa-solid fa-book-atlas"></i></a></li>
+                <li><a href="search.html">World of D&D <i class="fa-solid fa-book-atlas"></i></a></li>
                 <li><a href="#">Settings <i class="fa-solid fa-gear"></i></a></li>
                 <li><a href="#">Profile</a></li>
             </ul>
@@ -57,13 +59,9 @@
             </section>
 
             <!-- WORLD OF D&D -->
-            <section class="main-content-section gradient-border" aria-label="World of D&D">
-                <h2>World of D&D</h2>
-                <form>
-                    <label for="dnd-search">Search D&D Database:</label>
-                    <input type="search" id="dnd-search" placeholder="What are you looking for?">
-                    <button type="submit">Go!</button>
-                </form>
+            <section class="main-content-section gradient-border" aria-label="Friends">
+                <h2>Friends</h2>
+                <p>You have no friend connections yet.</p>
             </section>
         
         </main>

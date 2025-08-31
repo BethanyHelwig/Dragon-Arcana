@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+
+        <!-- Icons CDN -->
+         <script src="https://kit.fontawesome.com/77037f1d9e.js" crossorigin="anonymous"></script>
+
+        <!-- Scripts -->
+        <script src="search.js" type="module"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+    <body>
+        <nav>
+            <a href="dashboard.html" class="logo-link">
+                <img id="nav-logo" src="images/logo_dark_mode.png">
+                <h2 id="nav-title">Dragon Arcana</h2>
+            </a>
+            <button class="hamburger" data-btn="hamburger">&#9776;</button>
+            <ul id="nav-links">
+                <li><a href="#" id="characters-btn">Characters <i class="fa-solid fa-user"></i></a></li>
+                <li><a href="#">Games <i class="fa-solid fa-dice-d20"></i></a></li>
+                <li><a href="#">Friends <i class="fa-solid fa-user-group"></i></a></li>
+                <li><a href="search.html">World of D&D <i class="fa-solid fa-book-atlas"></i></a></li>
+                <li><a href="#">Settings <i class="fa-solid fa-gear"></i></a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+
+        <main id="search-main-content">
+
+        <!-- WORLD OF D&D -->
+            <h2 class="title-glow">World of D&D</h2>
+            <form>
+                <label for="dnd-search">Search D&D Database:</label>
+                <input type="search" id="dnd-search" placeholder="What are you looking for?" pattern="[a-zA-Z]+">
+                <select name="search-dropdown" id="search-dropdown">
+                    <option value="ability-scores">Ability Scores</option>
+                    <option value="alignments">Alignments</option>
+                    <option value="backgrounds">Backgrounds</option>
+                    <option value="classes">Classes</option>
+                    <option value="conditions">Conditions</option>
+                    <option value="damage-types">Damage Types</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="equipment-categories">Equipment Categories</option>
+                    <option value="feats">Feats</option>
+                    <option value="features">Features</option>
+                    <option value="languages">Languages</option>
+                    <option value="magic-items">Magic Items</option>
+                    <option value="magic-schools">Magic Schools</option>
+                    <option value="monsters">Monsters</option>
+                    <option value="proficiencies">Proficiencies</option>
+                    <option value="rule-sections">Rule Sections</option>
+                    <option value="rules">Rules</option>
+                    <option value="skills">Skills</option>
+                    <option value="spells">Spells</option>
+                    <option value="subclasses">Subclasses</option>
+                    <option value="subraces">Subraces</option>
+                    <option value="traits">Traits</option>
+                    <option value="weapon-properties">Weapon Properties</option>
+                </select>
+                <button type="submit">Go!</button>
+            </form>
+
+            <section id="search-results">
+                Your results will display here.
+            </section>
+        
+        </main>
+
+        <footer>
+            <p id="copyright-text"></p>
+        </footer>
+        
+    </body>
+</html>

@@ -71,6 +71,7 @@ h3{
     margin: 0;
 }
 
+.title-glow,
 .main-content-section h2 {
     margin: 0 0 0.625rem 0; /* 10px */
     color: #bbe1ff;
@@ -93,6 +94,34 @@ a:active {
     /* color: #8ac781; */
 }
 
+.logo-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-results h2 {
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.search-result-item p {
+    margin: 0;
+}
+
+.emphasis {
+    color: #bbe1ff;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    line-height: 1.5em;
+}
+
 /* -- LAYOUT -- */
 
 header {
@@ -105,8 +134,8 @@ header {
 
 nav {
     background-color: #211E23;
-    display: grid;
-    grid-template-columns: auto auto 1fr;
+    display: flex;
+    justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
     width: 100%;
@@ -153,6 +182,28 @@ footer {
     justify-content: center;
     text-align: center;
     gap: 1em;
+}
+
+#search-main-content {
+    margin-top: 5.5em; /* 80px */
+    margin-bottom: 1.25em; /* 20px */
+    padding: 1.25em; /* 20px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+#search-results {
+    width: 100%;
+    text-align: start;
+}
+
+.search-result-item {
+    border-bottom: 2px solid #80c6ff8e;
+    padding: 1em;
 }
 
 #content-nav {
@@ -206,6 +257,17 @@ footer {
     background-color: #353535;
 }
 
+.search-result-item img {
+    align-self: flex-start;
+    margin-top: 1em;
+    width: 200px;
+    height: auto;
+}
+
+.search-result-content {
+    display: flex;
+}
+
 /* INTERACTIVE */
 
 form {
@@ -214,6 +276,7 @@ form {
     gap: 0.25em; /* 4px */
 }
 
+select,
 input[type="email"],
 input[type="password"],
 input[type="search"] {
@@ -277,6 +340,7 @@ button:active {
     nav {
         background-color: #211E23;
         display: flex;
+        justify-content: space-between;
         box-sizing: border-box;
         align-items: center;
         width: 100%;
