@@ -1,0 +1,17 @@
+header {
+    margin: 0;
+    background-color: #211E23;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    padding: 0.3125em 0.9375em; /* 5px 15px */
+    box-shadow: 0 5px 5px black;
+}
+
+#sheet-body {
+    margin: 2em;
+    display: grid;
+    
+}
