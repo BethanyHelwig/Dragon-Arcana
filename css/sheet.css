@@ -12,6 +12,71 @@ header {
 
 #sheet-body {
     margin: 2em;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#sheet-body h1,
+#sheet-body h2 {
+    text-transform: uppercase;
+    border-bottom: 2px solid #80c5ff;
+}
+
+#sheet-body h1,
+#sheet-body h4 {
+    text-align: center;
+}
+
+#sheet-body h4 {
+    font-style: italic;
+    font-weight: normal;
+    grid-column: span 6;
+    margin: 0 0 1em 0;
+}
+
+#sheet-body p {
+    margin: 0.4em 0;
+}
+
+#sheet-body ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+}
+
+.score-title {
+    font-weight: bold;
+}
+
+.ability {
+    border: 1px solid purple;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
     
+}
+
+#sheet-body .ability p {
+    margin: 0;
+    font-size: 2rem;
+}
+
+#sheet-body .ability h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 0.75rem;
+}
+
+.mod-save {
+    margin-top: 5px;
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    justify-content: space-between;
+    background-color: #353535;
 }
