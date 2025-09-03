@@ -21,6 +21,7 @@ header {
 #sheet-body h2 {
     text-transform: uppercase;
     border-bottom: 2px solid #80c5ff;
+    color: #aedbff;
 }
 
 #sheet-body h1,
@@ -37,6 +38,7 @@ header {
 
 #sheet-body p {
     margin: 0.4em 0;
+    line-height: 1.25em;
 }
 
 #sheet-body ul {
@@ -50,6 +52,7 @@ header {
 
 .score-title {
     font-weight: bold;
+    color: #aedbff;
 }
 
 .ability {
@@ -79,4 +82,8 @@ header {
     border-radius: 5px;
     justify-content: space-between;
     background-color: #353535;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
