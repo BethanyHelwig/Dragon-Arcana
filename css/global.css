@@ -377,6 +377,11 @@ button:active {
     justify-content: space-around;
 }
 
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* -- MEDIA QUERIES -- */
 
 @media (min-width: 550px){
