@@ -68,6 +68,15 @@ async function getDetails(url, id, category) {
     else if (category === "alignments"){
         renderAlignment(data, id)
     }
+    else if (category === 'ability-scores'){
+        renderAbilityScore(data, id)
+    }
+    else if (category === 'backgrounds'){
+        renderBackground(data, id)
+    }
+    else if (category === 'classes'){
+        renderClass(data, id)
+    }
 }
 
 function renderMonster(data, id, url) {
@@ -109,5 +118,48 @@ function renderAlignment(data, id){
                 <li>Abbreviation: <span class="emphasis">${data.abbreviation}</span></li>
                 <li>Description: <span class="emphasis">${data.desc}</span></li>
             </ul>
+        </div>
+    `
+}
+
+function renderAbilityScore(data, id) {
+
+    const skills = data.skills.map(skill => skill.name).join(", ")
+
+    document.getElementById(id).innerHTML += `
+        <div class="search-result-content">
+            <ul>
+                <li>Full Name: <span class="emphasis">${data.full_name}</span></li>
+                <li>Description: 
+                    <span class="emphasis">${data.desc[0]}</span>
+                    <span class="emphasis">${data.desc[1]}</span>
+                </li>
+                <li>Skills: <span class="emphasis">${skills}</span></li>
+            </ul>
+        </div>
+    `
+}
+
+function renderBackground(data, id){
+    document.getElementById(id).innerHTML += `
+        <div class="search-result-content">
+            <ul>
+                <li>Feature: <span class="emphasis">${data.feature.name}</span></li>
+                    <ul>
+                        <li><span class="emphasis">${data.feature.desc[0]}</span></li>
+                        <li><span class="emphasis">${data.feature.desc[1]}</span></li>
+                    </ul>
+            </ul>
+        </div>
+    `
+}
+
+function renderClass(data, id){
+    document.getElementById(id).innerHTML += `
+        <div class="search-result-content">
+            <ul>
+                <li>Name: <span class="emphasis">${data.name}</span></li>
+            </ul>
+        </div>
     `
 }
