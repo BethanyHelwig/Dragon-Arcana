@@ -62,20 +62,31 @@ async function getDetails(url, id, category) {
     const response = await fetch(`https://www.dnd5eapi.co${url}`)
     const data = await response.json()
 
-    if (category === "monsters") {    
-        renderMonster(data, id, url)
-    }
-    else if (category === "alignments"){
-        renderAlignment(data, id)
-    }
-    else if (category === 'ability-scores'){
-        renderAbilityScore(data, id)
-    }
-    else if (category === 'backgrounds'){
-        renderBackground(data, id)
-    }
-    else if (category === 'classes'){
-        renderClass(data, id)
+    switch (category) {
+        case 'monsters': 
+            renderMonster(data, id, url)
+            break;
+        case 'alignments':
+            renderAlignment(data, id)
+            break;
+        case 'ability-scores':
+            renderAbilityScore(data, id)
+            break;
+        case 'backgrounds':
+            renderBackground(data, id)
+            break;
+        case 'classes':
+            renderClass(data, id)
+            break;
+        case 'conditions':
+            renderCondition(data, id)
+            break;
+        case 'damage-types':
+            renderDamageTypes(data, id)
+            break;
+        case 'equipment':
+            renderEquipment(data, id)
+            break;
     }
 }
 
@@ -159,6 +170,63 @@ function renderClass(data, id){
         <div class="search-result-content">
             <ul>
                 <li>Name: <span class="emphasis">${data.name}</span></li>
+            </ul>
+        </div>
+    `
+}
+
+function renderCondition(data, id){
+
+    const description = data.desc.map(desc => {
+        return `<li><span class="emphasis">${desc}</span></li>`
+    }).join("")
+
+    document.getElementById(id).innerHTML += `
+        <div class="search-result-content">
+            <ul>
+                <li>Description: 
+                    <ul>
+                        ${description}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    `
+}
+
+function renderDamageTypes(data, id){
+    document.getElementById(id).innerHTML += `
+        <div class="search-result-content">
+            <ul>
+                <li>Description: <span class="emphasis">${data.desc[0]}</span></li>
+            </ul>
+        </div>
+    `
+}
+
+function renderEquipment(data, id){
+    const description = data.desc.map(desc => {
+        return desc
+        }).join(" ")
+
+    const gearCategory = ('gear_category' in data) 
+        ? `<li>Gear Category: <span class="emphasis">${data.gear_category.name}</span></li>`
+        : ""
+ 
+    const toolCategory = (data.tool_category != null) 
+        ? `<li>Gear Category: <span class="emphasis">${data.gear_category.name}</span></li>`
+        : ""
+ 
+
+    document.getElementById(id).innerHTML += `
+        <div class="search-result-content">
+            <ul>
+                <li>Equipment Category: <span class="emphasis">${data.equipment_category.name}</span></li>
+                ${gearCategory}
+                ${toolCategory}
+                <li>Cost: <span class="emphasis">${data.cost.quantity} ${data.cost.unit}</span></li>
+                <li>Weight: <span class="emphasis">${data.weight}</span></li>
+                <li>Description: <span class="emphasis">${description}</span></li>
             </ul>
         </div>
     `
