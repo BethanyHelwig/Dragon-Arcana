@@ -1,3 +1,9 @@
+const dicePanel = document.getElementById('dice-panel')
+const diceCalculator = document.getElementById('dice-calculator')
+const diceSelection = document.getElementById('dice-selection-form')
+let diceSelected = document.getElementById('dice-selection-fieldset').value
+let diceRolls = document.getElementById('dice-rolls-fieldset').value
+
 const url = localStorage.getItem("sheeturl")
 
 let abilityScores = {
@@ -16,6 +22,22 @@ document.addEventListener('click', (e) => {
         const health = rollForHealth()
         renderInteractiveScores(health)
     }
+    else if (e.target.id === 'dice-button' || e.target.id === 'dice-panel-icon'){
+        togglePanel()
+    }
+    else if (e.target.id === 'roll-dice'){
+        rollDice()
+    }
+})
+
+diceSelection.addEventListener('change', (e) => {
+    if (e.target.name === 'dice'){
+        diceSelected = e.target.value
+    }
+    else if (e.target.name === 'roll-number'){
+        diceRolls = e.target.value
+    }
+    renderDiceEquation()
 })
 
 async function fillSheet(){
@@ -274,4 +296,33 @@ function renderInteractiveScores(health){
     `
 }
 
+function togglePanel(){
+    if (dicePanel.style.display === 'none' || dicePanel.style.display === '') {
+        dicePanel.style.display = 'flex';
+    } else {
+        dicePanel.style.display = 'none';
+    }
+}
+
+function renderDiceEquation(){
+    diceCalculator.innerHTML = `Roll d${diceSelected} x ${diceRolls}: `
+}
+
+function rollDice(){
+    renderDiceEquation()
+    let totals = []
+    for (let i = 0; i < diceRolls; i++){
+        console.log(`Current dice selected is: ${diceSelected}`)
+        let subtotal = Math.round(Math.random() * (diceSelected - 1) + 1);
+        console.log(`Subtotal rolled is: ${subtotal}`)
+        totals.push(subtotal)
+    }
+    console.log(totals)
+    const sum = totals.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+    let string = `\n(${totals.join(" + ")}) = ${sum}`
+
+    diceCalculator.innerHTML += string
+}
+
 fillSheet()
+renderDiceEquation()
