@@ -1,0 +1,141 @@
+<!DOCTYPE html lang="en">
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/global.css">
+        <link rel="stylesheet" href="./css/sheet.css">
+
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+        <!-- Icons CDN -->
+         <script src="https://kit.fontawesome.com/77037f1d9e.js" crossorigin="anonymous"></script>
+
+        <script src="monstersheet.js" type="module"></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="dashboard.html" class="logo-link">
+                <img id="nav-logo" src="images/logo_dark_mode.png">
+                <h2 id="nav-title">Dragon Arcana</h2>
+            </a>
+        </header>
+        <main id="sheet-body">
+        </main>
+        <div id="img-attribution">
+            <a href="https://www.freepik.com/free-photo/grungy-beige-marble-textured-background_17118584.htm#fromView=search&page=1&position=3&uuid=4b564eca-fc22-4d57-bb41-e80cfcab914c&query=marble">Image by rawpixel.com on Freepik</a>
+        </div>
+        <section id="dice-container">
+            <div id="dice-panel">
+                <h3>ROLL</h3>
+                <form id="dice-selection-form">
+                    <fieldset id="dice-selection-fieldset">
+                        <div class="span-2-rows dice-sub-container">
+                            <input type="radio" id="d20" value="20" name="dice" checked>
+                            <label for="d20"><img class="dice-img" src="./images/d20.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d20</span>
+                            </div> -->
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="d4" value="4" name="dice">
+                            <label for="d4"><img class="dice-img" src="./images/d4.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d4</span>
+                            </div> -->
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="d6" value="6" name="dice">
+                            <label for="d6"><img class="dice-img" src="./images/d6.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d6</span>
+                            </div> -->
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="d8" value="8" name="dice">
+                            <label for="d8"><img class="dice-img" src="./images/d8.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d8</span>
+                            </div> -->
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="d10" value="10" name="dice">
+                            <label for="d10"><img class="dice-img" src="./images/d10.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d10</span>
+                            </div> -->
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="d12" value="12" name="dice">
+                            <label for="d12"><img class="dice-img" src="./images/d12.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d12</span>
+                            </div> -->
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="d100" value="100" name="dice">
+                            <label for="d100"><img class="dice-img" src="./images/d100.png"></label>
+                            <!-- <div class="dice-desc">
+                                <span>d100</span>
+                            </div> -->
+                        </div>
+                    </fieldset>
+                    <fieldset id="dice-rolls-fieldset">
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-1" value="1" name="roll-number" checked>
+                            <label for="roll-1">1</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-2" value="2" name="roll-number">
+                            <label for="roll-2">2</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-3" value="3" name="roll-number">
+                            <label for="roll-3">3</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-4" value="4" name="roll-number">
+                            <label for="roll-4">4</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-5" value="5" name="roll-number">
+                            <label for="roll-5">5</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-6" value="6" name="roll-number">
+                            <label for="roll-6">6</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-7" value="7" name="roll-number">
+                            <label for="roll-7">7</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-8" value="8" name="roll-number">
+                            <label for="roll-8">8</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-9" value="9" name="roll-number">
+                            <label for="roll-9">9</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-10" value="10" name="roll-number">
+                            <label for="roll-10">10</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-11" value="11" name="roll-number">
+                            <label for="roll-11">11</label>
+                        </div>
+                        <div class="dice-sub-container">
+                            <input type="radio" id="roll-12" value="12" name="roll-number">
+                            <label for="roll-12">12</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <div>
+                    <h3 id="dice-calculator">Roll d20 x 1: </h3>
+                    <button id="roll-dice">Roll</button>
+                </div>
+            </div>
+            <button id="dice-button"><i id="dice-panel-icon" class="fa-solid fa-dice-d20"></i></button>
+        </section>
+    </body>
+</html>

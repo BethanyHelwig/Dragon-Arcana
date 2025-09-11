@@ -20,6 +20,7 @@ body {
     background-image: url("/images/marble.jpg");
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 #sheet-body {
@@ -49,6 +50,10 @@ body {
     border-bottom: 2px solid #80c5ff; 
     color: #aedbff;
     */
+}
+
+#sheet-body h2 {
+    margin: 0.675em 0;
 }
 
 #sheet-body h1,
@@ -127,7 +132,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.85rem;
     text-align: center;
-    margin-bottom: 2em;
+    padding-bottom: 2em;
     text-shadow: 0 0 5px black;
 }
 
@@ -208,4 +213,131 @@ body {
 #health-calculator #health-plus:hover {
     color: whitesmoke;
     background-color: green;
+}
+
+#dice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+#dice-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 1rem 0 0 auto;
+    font-size: 4rem;
+    color: #6f378b;
+}
+
+#dice-button:hover {
+    box-shadow: none;
+    color: white;
+}
+
+#dice-panel {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid maroon;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    min-height: 300px;
+    min-width: 200px;
+    background-color: #211E23;
+    padding: 0.675em;
+    justify-content: start;
+    align-content: center;
+}
+
+#dice-panel h3 {
+    text-align: top;
+    /* border-bottom: 1px solid white; */
+    margin-bottom: 0.5em;
+}
+
+#dice-panel fieldset {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2px;
+    margin: 0 0 10px 0;
+    gap: 2px;
+}
+
+.span-2-rows {
+    grid-row: span 2;
+}
+
+#d20 + label{
+    height: fill;
+    font-size: 1.5rem;
+}
+
+#dice-panel form label {
+    display: flex;
+    position: relative;
+    background-color: #353535;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 4.6px;
+    transition: all 0.3s;
+}
+
+#dice-panel form input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+#dice-panel form input[type="radio"]:hover + label,
+#dice-panel form input[type="radio"]:checked + label {
+    background-color: purple;
+}
+
+.dice-img {
+    width: 30px;
+    filter: invert(100);
+}
+
+.dice-sub-container {
+    position: relative;
+    display: flex;
+    text-align: center;
+}
+
+.dice-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    text-shadow: 0 0 10px purple;
+}
+
+.dice-sub-container .dice-desc {
+    display: flex;
+}
+
+#dice-calculator {
+    font-weight: normal;
+    font-size: 1rem;
+    background-color: #353535;
+    padding: 5px;
+    border-radius: 5px;
+    border-top: 1px solid purple;
+    border-bottom: none;
+}
+
+#roll-dice {
+    padding: 0.5em;
+    width: 100%;
 }

@@ -1,4 +1,4 @@
-import { userSavedData } from "./dummy_data.js"
+import { userSavedData } from "../dummy_data.js"
 
 const mainContent = document.getElementById('main-content')
 const charactersBtn = document.getElementById('characters-btn')

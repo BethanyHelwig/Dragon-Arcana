@@ -1,0 +1,21 @@
+{
+  "name": "dragon-arcana",
+  "version": "1.0.0",
+  "description": "Virtual tabletop for D&D",
+  "homepage": "https://github.com/BethanyHelwig/Dragon-Arcana#readme",
+  "bugs": {
+    "url": "https://github.com/BethanyHelwig/Dragon-Arcana/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BethanyHelwig/Dragon-Arcana.git"
+  },
+  "license": "ISC",
+  "author": "Bethany Helwig",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
