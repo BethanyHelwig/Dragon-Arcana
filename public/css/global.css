@@ -165,7 +165,7 @@ footer {
     border: 4px solid transparent;
 }
 
-#main-content {
+main {
     margin-top: 5em; /* 80px */
     margin-bottom: 1.25em; /* 20px */
     padding: 1.25em; /* 20px */
@@ -205,7 +205,7 @@ footer {
     padding: 0;
 }
 
-#nav-links {
+.nav-links {
     margin: auto auto 1em auto; /* 20px */
     display: none; /* change to flex */
     flex-direction: column;
@@ -406,7 +406,7 @@ button:active {
         box-shadow: 0 5px 5px black;
     }
 
-    #nav-links {
+    .nav-links {
         margin: auto 1.25em auto auto; /* 20px */
         display: flex;
         flex-direction: row;

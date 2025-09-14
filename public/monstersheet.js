@@ -1,8 +1,8 @@
 const dicePanel = document.getElementById('dice-panel')
 const diceCalculator = document.getElementById('dice-calculator')
 const diceSelection = document.getElementById('dice-selection-form')
-let diceSelected = document.getElementById('dice-selection-fieldset').value
-let diceRolls = document.getElementById('dice-rolls-fieldset').value
+let diceSelected = 20
+let diceRolls = 1
 
 const url = localStorage.getItem("sheeturl")
 
@@ -20,13 +20,19 @@ let healthData = ''
 document.addEventListener('click', (e) => {
     if (e.target.id === 'roll-stats'){
         const health = rollForHealth()
-        renderInteractiveScores(health)
+        renderHP(health)
     }
     else if (e.target.id === 'dice-button' || e.target.id === 'dice-panel-icon'){
         togglePanel()
     }
     else if (e.target.id === 'roll-dice'){
         rollDice()
+    }
+    else if (e.target.id === 'health-minus'){
+        updateHealth(-document.getElementById('health-change-input').value)
+    }
+    else if (e.target.id === 'health-plus'){
+        updateHealth(document.getElementById('health-change-input').value)
     }
 })
 
@@ -47,6 +53,9 @@ async function fillSheet(){
     const string = buildString(data)
 
     document.getElementById('sheet-body').innerHTML = string
+
+    document.getElementById('dice-selection-fieldset').value = 20
+    document.getElementById('dice-rolls-fieldset').value = 1
 }
 
 function buildString(data){
@@ -85,17 +94,28 @@ function buildString(data){
         <div class="sheet-top">
             <h1 id="ms-title">${data.name}</h1>
             <h4 id="ms-subtitle">${data.size} ${data.type}, ${data.alignment}</h4>
-            <button id="roll-stats">Roll Random Stats</button>
         </div>
         <div class="flex-between">
             <div>
                 <p><span class="score-title"><i class="fa-solid fa-shield"></i> AC</span> ${data.armor_class[0].value}</p>
-                <p><span class="score-title"><i class="fa-solid fa-heart"></i> HP</span> ${data.hit_points} (${data.hit_points_roll})</p>
+                <div id="hp-container">
+                    <p><span class="score-title"><i class="fa-solid fa-heart"></i> HP</span> <span class="hp">(${data.hit_points_roll})</span> </p> <button id="roll-stats">Roll for HP</button>
+                </div>
                 <p><span class="score-title">Initiative</span> N/A</p>
                 <p><span class="score-title">Proficiency</span> +${data.proficiency_bonus}</p>
                 <p><span class="score-title">Speed</span> ${speed}</p>
             </div>
             <div id="interactive-scores">
+                <div id="health-calculator">
+                    <h3>HEALTH</h3>
+                    <p class="hp" id="hp">(${data.hit_points_roll})</p>
+                    <div class="flex">
+                        <button id="health-minus">-</button>
+                        <input id="health-change-input" type="number" pattern="[0-9]{1,2}">
+                        <button id="health-plus">+</button>
+                    </div>
+                </div>
+            
             </div>
         </div>
         <h2>Ability Scores</h2>
@@ -259,7 +279,6 @@ function calculateModifier(score){
 
 function rollForHealth(){
     const rollNumber = parseInt(healthData.split("d").shift())
-    // console.log(`Roll dice ${rollNumber} times`)
     let dice = 0
     let additive = 0
     let total = 0
@@ -272,28 +291,18 @@ function rollForHealth(){
 
     for (let i = rollNumber; i > 0; i--){
         total += Math.round(Math.random() * dice)
-        // console.log(`Roll ${i}, total is ${total}`)
     }
 
     return total + additive
 
 }
 
-function renderInteractiveScores(health){
-    document.getElementById('interactive-scores').innerHTML = `
-    <div id="health-calculator">
-        <h3>HEALTH</h3>
-        <p>${health}</p>
-        <div class="flex">
-            <button id="health-minus">-</button>
-            <input type="number" pattern="[0-9]{1,2}">
-            <button id="health-plus">+</button>
-        </div>
-    </div>
-    <div>
-        <h3>ROLL</h3>
-    </div>
-    `
+function renderHP(health){
+
+    const hpList = document.querySelectorAll('.hp')
+    hpList.forEach((el) => el.textContent = ` ${health}`)
+    document.getElementById('roll-stats').textContent = `Reroll HP (${healthData})`
+
 }
 
 function togglePanel(){
@@ -319,9 +328,15 @@ function rollDice(){
     }
     console.log(totals)
     const sum = totals.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-    let string = `\n(${totals.join(" + ")}) = ${sum}`
+    let string = `<p>(${totals.join(" + ")}) = ${sum}</p>`
 
     diceCalculator.innerHTML += string
+}
+
+function updateHealth(change){
+    let currentHP = parseInt(document.getElementById('hp').textContent)
+    currentHP += parseInt(change)
+    document.getElementById('hp').textContent = currentHP
 }
 
 fillSheet()
