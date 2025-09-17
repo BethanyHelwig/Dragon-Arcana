@@ -7,6 +7,11 @@ Green: 8ac781
 */
 
 /* -- GENERAL -- */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: #211E23;
@@ -173,6 +178,7 @@ main {
     justify-content: center;
     text-align: center;
     gap: 1em;
+    height: 100%;
 }
 
 #search-main-content {
