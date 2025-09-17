@@ -1,13 +1,12 @@
-import http from 'node:http'
-import path from 'node:path'
-import { serveStatic } from './utils/serveStatic.js'
+import express from 'express'
+import cors from 'cors'
 
 const PORT = 8000
 
-const __dirname = import.meta.dirname
+const app = express()
 
-const server = http.createServer( async (req, res) =>{
-    return await serveStatic(req, res, __dirname)
-})
+app.use(cors())
 
-server.listen(PORT, () => console.log(`Server is listening on port ${PORT}`))
+app.use(express.static('public'))
+
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`))
