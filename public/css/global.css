@@ -8,14 +8,25 @@ Green: 8ac781
 
 /* -- GENERAL -- */
 
+:root {
+    --background-primary-color: #211E23;
+    --text-primary-color: #e6e6e6;
+    --purple-accent-color: #aa00ff;
+    --dark-purple-accent-color: #6f378b;
+    --blue-accent-color: #80c5ff;
+    --gray-secondary-color: #353535;
+    --pale-blue-accent-color: #bbe1ff;
+    --green-accent-color: #8ac781;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    background-color: #211E23;
-    color: #e6e6e6;
+    background-color: var(--background-primary-color);
+    color: var(--text-primary-color);
     font-family: "Amarante", serif;
     align-items: center;
 }
@@ -36,10 +47,10 @@ body {
 
 #hero-title,
 #nav-title {
-    background-image: linear-gradient(white 10%, #80c5ff);
+    background-image: linear-gradient(white 10%, var(--blue-accent-color));
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 5px #aa00ff);
+    filter: drop-shadow(0 0 5px var(--purple-accent-color));
     margin: 0;
     padding: 0;
 }
@@ -79,8 +90,8 @@ h3{
 .title-glow,
 .main-content-section h2 {
     margin: 0 0 0.625rem 0; /* 10px */
-    color: #bbe1ff;
-    text-shadow: 0 0 15px #aa00ff;
+    color: var(--pale-blue-accent-color);
+    text-shadow: 0 0 15px var(--purple-accent-color);
 }
 
 h1 {
@@ -96,7 +107,6 @@ a {
 a:hover,
 a:active {
     color: #efadff;
-    /* color: #8ac781; */
 }
 
 .logo-link {
@@ -115,7 +125,7 @@ a:active {
 }
 
 .emphasis {
-    color: #bbe1ff;
+    color: var(--pale-blue-accent-color);
 }
 
 /* -- LAYOUT -- */
@@ -129,7 +139,7 @@ header {
 }
 
 nav {
-    background-color: #211E23;
+    background-color: var(--background-primary-color);
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -143,7 +153,7 @@ nav {
 }
 
 footer {
-    background-color: #211E23;
+    background-color: var(--background-primary-color);
     height: 100px;
     display: flex;
     box-sizing: border-box;
@@ -164,8 +174,8 @@ footer {
     height: auto;
     margin: 0 0.625em; /* 10px */
     padding: 0.9375em; /* 15px */
-    background: linear-gradient(#211E23, #211E23) padding-box,
-                linear-gradient(#aa00ff, #80c5ff) border-box;
+    background: linear-gradient(var(--background-primary-color), var(--background-primary-color)) padding-box,
+                linear-gradient(var(--purple-accent-color), var(--blue-accent-color)) border-box;
     border-radius: 15px;
     border: 4px solid transparent;
 }
@@ -224,8 +234,8 @@ main {
 
 .gradient-border {
     padding: 15px 25px;
-    background: linear-gradient(#211E23, #211E23) padding-box,
-                linear-gradient(#80c5ff, #6f378b) border-box;
+    background: linear-gradient(var(--background-primary-color), var(--background-primary-color)) padding-box,
+                linear-gradient(var(--blue-accent-color), var(--dark-purple-accent-color)) border-box;
     border-radius: 15px;
     border: 4px solid transparent;
 }
@@ -246,12 +256,12 @@ main {
     padding: 0.625em; /* 10px */
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #8ac781;
+    border: 1px solid var(--green-accent-color);
     border-radius: 5px;
 }
 
 .character:hover {
-    background-color: #353535;
+    background-color: var(--gray-secondary-color);
 }
 
 .search-result-item img {
@@ -283,9 +293,9 @@ main {
 }
 
 .search-result-content .ability-scores li {
-    border: 1px solid #8ac781;
+    border: 1px solid var(--green-accent-color);
     border-radius: 4.6px;
-    background-color: #353535;
+    background-color: var(--gray-secondary-color);
     text-align: center;
 }
 
@@ -354,7 +364,7 @@ button {
     font-size: 1rem;
     font-weight: bold;
     color: whitesmoke;
-    background-color: #6f378b;
+    background-color: var(--dark-purple-accent-color);
     border: none;
     border-radius: 5px;
     padding: 0.625em 1.25em; /* 10px 20px */
@@ -365,19 +375,19 @@ button:hover,
 button:active {
     background-color: #ebd7f5;
     color: #7700b3;
-    box-shadow: 0 0 20px #aa00ff;
+    box-shadow: 0 0 20px var(--purple-accent-color);
 }
 
 .hamburger {
     display: block;
     font-size: 2rem;
-    background-color: #211E23;
+    background-color: var(--background-primary-color);
     padding: 0.2em 0.2em;
     margin: auto;
 }
 
 .hamburger:hover {
-    background-color: #353535;
+    background-color: var(--gray-secondary-color);
     color: whitesmoke;
     box-shadow: none;
 }
@@ -399,7 +409,7 @@ button:active {
 @media (min-width: 550px){
 
     nav {
-        background-color: #211E23;
+        background-color: var(--background-primary-color);
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;

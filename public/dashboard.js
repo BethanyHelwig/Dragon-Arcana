@@ -4,6 +4,8 @@ const mainContent = document.getElementById('main-content')
 const charactersBtn = document.getElementById('characters-btn')
 const copyrightText = document.getElementById('copyright-text')
 
+localStorage.setItem('theme', 'dark')
+
 // listener for button clicks
 document.addEventListener('click', function(e){
     
