@@ -165,6 +165,7 @@ footer {
     width: 300px;
 }
 
+#register-container,
 #login-container {
     display: none;
     flex-direction: column;
@@ -175,7 +176,7 @@ footer {
     margin: 0 0.625em; /* 10px */
     padding: 0.9375em; /* 15px */
     background: linear-gradient(var(--background-primary-color), var(--background-primary-color)) padding-box,
-                linear-gradient(var(--purple-accent-color), var(--blue-accent-color)) border-box;
+                linear-gradient(var(--blue-accent-color), var(--purple-accent-color)) border-box;
     border-radius: 15px;
     border: 4px solid transparent;
 }
@@ -447,6 +448,7 @@ button:active {
         flex-direction: row;
     }
 
+    #register-container,
     #login-container {
         width: 450px;
         min-width: 450px;

@@ -17,32 +17,51 @@
             <div id="hero-text-container">
                 <h1 id="hero-title">Dragon Arcana</h1>
                 <p>Are you ready to play?</p>
-                <button id="enter-btn">Enter</button>
+                <button id="login-form-btn">Login</button>
+                <button id="register-form-btn">Create account</button>
+                <a href="dashboard.html">Continue as guest</a>
             </div>
         </header>
 
         <section id="login-container">
-            <h2>Already have an account? Login, hero!</h2>
+            <h2>Login, hero!</h2>
             <form id="login-form">
                 <label for="email">Email:</label>
                 <input 
                     type="email" 
                     required
-                    id="email"
+                    id="login-email"
                     placeholder="adventurer@home.com"
                     name="login">
                 <label for="password">Password:</label>
                 <input 
                     type="password" 
                     required
-                    id="password" 
+                    id="login-password" 
                     placeholder="M@gic1zcool"
                     name="login">
                 <button type="submit">Log in</button>
             </form>
+        </section>
+        <section id="register-container">
             <h2>New here? Welcome, adventurer!</h2>
-            <button>Create Account</button>
-            <a href="dashboard.html">Continue as guest</a>
+            <form id="register-form">
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    required
+                    id="register-email"
+                    placeholder="adventurer@home.com"
+                    name="login">
+                <label for="password">Password:</label>
+                <input 
+                    type="password" 
+                    required
+                    id="register-password" 
+                    placeholder="M@gic1zcool"
+                    name="login">
+                <button type="submit">Create account</button>
+            </form>
         </section>
 
         <!-- Script -->

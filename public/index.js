@@ -1,9 +1,21 @@
-const enterBtn = document.getElementById('enter-btn')
+const registerContainer = document.getElementById('register-container')
 const loginContainer = document.getElementById('login-container')
 
-enterBtn.addEventListener('click', displayLogin)
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'login-form-btn'){
+        displayLogin()
+    }
+    else if (e.target.id === 'register-form-btn'){
+        displayRegister()
+    }
+})
 
 function displayLogin(){
-    enterBtn.style.display = 'none'
     loginContainer.style.display = 'flex'
+    registerContainer.style.display = 'none'
+}
+
+function displayRegister(){
+    loginContainer.style.display = 'none'
+    registerContainer.style.display = 'flex'
 }
